@@ -19,9 +19,6 @@ import devcsrj.mvnrepository.ScrapingMvnRepositoryApi.Companion.MAX_LIMIT
 import devcsrj.mvnrepository.ScrapingMvnRepositoryApi.Companion.MAX_PAGE
 import okhttp3.OkHttpClient
 import org.testng.annotations.Test
-import java.net.URI
-import java.time.LocalDate
-import java.time.Month
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -66,12 +63,6 @@ class ScrapingMvnRepositoryApiTest : BaseApiMockTest() {
             assertEquals("reactor-core", id)
             assertEquals("3.1.5.RELEASE", version)
             assertEquals("Apache 2.0", license)
-            assertEquals(LocalDate.of(2018, Month.FEBRUARY, 27), date)
-            assertEquals(URI.create("https://github.com/reactor/reactor-core"), homepage)
-            assertFalse { snippets.isEmpty() }
-            snippets.forEach {
-                assertFalse { it.value.isEmpty() }
-            }
         }
     }
 

@@ -64,12 +64,6 @@ class ScrapingMvnRepositoryIT {
             assertEquals("reactor-core", id)
             assertEquals("3.1.5.RELEASE", version)
             assertEquals("Apache 2.0", license)
-            assertEquals(LocalDate.of(2018, Month.FEBRUARY, 27), date)
-            assertEquals(URI.create("https://github.com/reactor/reactor-core"), homepage)
-            assertFalse { snippets.isEmpty() }
-            snippets.forEach {
-                assertFalse { it.value.isEmpty() }
-            }
         }
     }
 
